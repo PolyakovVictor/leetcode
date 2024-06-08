@@ -30,6 +30,8 @@ cls = Solution()
 l1 = ListNode(2, ListNode(4, ListNode(9)))
 l2 = ListNode(5, ListNode(6, ListNode(4, ListNode(9))))
 result = cls.addTwoNumbers(l1=l1, l2=l2)
+
+
 while result:
     print(result.val, end=" ")
     result = result.next
