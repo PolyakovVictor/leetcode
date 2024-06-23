@@ -7,16 +7,13 @@ class Solution:
         high = len(nums) - 1
         while low <= high:
             mid = low + (high - low) // 2
-            print(low, high, mid)
             if nums[mid] == target:
                 return mid
             elif nums[mid] < target:
-                print("less")
                 low = mid + 1
-                print("low", low)
             else:
                 high = mid - 1
-        return mid
+        return low
 
 
 if __name__ == "__main__":
