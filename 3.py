@@ -1,21 +1,21 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        char_index_map = {}
+        start = max_lenght = current_lenght = 0
+        hash_table = {}
 
-        left = 0
-        max_length = 0
+        for i in range(len(s)):
+            if s[i] in hash_table and i >= start:
+                start = hash_table[s[i]] + 1
 
-        for right, char in enumerate(s):
-            if char in char_index_map and char_index_map[char] >= left:
-                left = char_index_map[char] + 1
-            char_index_map[char] = right
-            max_length = max(max_length, right - left + 1)
+            hash_table[s[i]] = i
 
-        return max_length
+            max_lenght = max(max_lenght, i - start + 1)
+
+        return max_lenght
 
 
 obj = Solution()
 
-result = obj.lengthOfLongestSubstring("abcabcbb")
+result = obj.lengthOfLongestSubstring(s="abcabcbb")
 
 print(result)
