@@ -1,10 +1,11 @@
-def count(list):
-    if list == []:
-        return 0
-    max_num = list[0]
-    if list[1:] > max_num:
-        max_num = list[1:]
-    return
+def solution(s):
+    result = []
+    if len(s) % 2:
+        s += "_"
+    for i in range(0, len(s), 2):
+        print(s)
+        result.append(s[i] + s[i + 1])
+    return result
 
 
-print(count(list=[1, 2, 3, 4]))
+print(solution(s="abcde"))
